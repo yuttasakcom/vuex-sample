@@ -12,7 +12,8 @@ const config = {
   },
   resolve: {
     alias: {
-      vue: 'vue/dist/vue.runtime.common.js'
+      vue: 'vue/dist/vue.runtime.common.js',
+      '@': resolve('src')
     },
     extensions: ['.js', '.vue']
   },
