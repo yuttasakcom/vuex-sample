@@ -23,7 +23,11 @@ const store = new Vuex.Store({
       commit('dec')
     }
   },
-  getters: {}
+  getters: {
+    getCount({ count }) {
+      return count
+    }
+  }
 })
 
 export default store
