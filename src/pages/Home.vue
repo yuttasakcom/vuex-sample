@@ -9,6 +9,8 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 import CounterControl from '@/components/Counter/CounterControl'
 import CounterView from '@/components/Counter/CounterView'
 
@@ -17,8 +19,8 @@ export default {
     CounterControl,
     CounterView
   },
-  data: () => ({
-    count: 0
+  computed: mapState({
+    count: state => state.count
   })
 }
 </script>
