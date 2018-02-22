@@ -2,7 +2,7 @@
   <div>
       <h1>Home Page</h1>
       <div>
-        <CounterView :count="getCount"/>
+        <CounterView />
         <CounterControl />
       </div>
   </div>
@@ -18,9 +18,6 @@ export default {
   components: {
     CounterControl,
     CounterView
-  },
-  computed: {
-    ...mapGetters(['getCount'])
   }
 }
 </script>

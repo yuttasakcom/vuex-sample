@@ -1,14 +1,12 @@
 <template>
-  <div>{{ count }}</div>
+  <div>{{ getCount }}</div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
-  props: {
-    count: {
-      type: Number,
-      required: true
-    }
+  computed: {
+    ...mapGetters(['getCount'])
   }
 }
 </script>

@@ -1,8 +1,8 @@
 <template>
   <div>
       <ul>
-          <li><button @click="increment">+</button></li>
-          <li><button @click="decrement">-</button></li>
+          <li><button @click="inc">+</button></li>
+          <li><button @click="dec">-</button></li>
       </ul>
   </div>
 </template>
@@ -11,13 +11,7 @@
 import { mapActions } from 'vuex'
 export default {
   methods: {
-    ...mapActions(['inc', 'dec']),
-    increment() {
-      this.inc()
-    },
-    decrement() {
-      this.dec()
-    }
+    ...mapActions(['inc', 'dec'])
   }
 }
 </script>
