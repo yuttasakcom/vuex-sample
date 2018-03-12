@@ -8,24 +8,28 @@ const store = new Vuex.Store({
     count: 0
   },
   mutations: {
-    inc(state) {
+    INC (state) {
       state.count = state.count + 1
     },
-    dec(state) {
+    DEC (state) {
       state.count = state.count - 1
     }
   },
   actions: {
-    inc({ commit }) {
-      commit('inc')
+    inc ({ commit }) {
+      commit('INC')
     },
-    dec({ commit }) {
-      commit('dec')
+    dec ({ commit }) {
+      commit('DEC')
     }
   },
   getters: {
-    getCount({ count }) {
+    getCount ({ count }) {
       return count
+    },
+    vat (_, getters) {
+      const vat = getters.getCount * 0.07
+      return vat.toFixed(2)
     }
   }
 })
