@@ -1,35 +1,38 @@
-import path from 'path'
-import HtmlWebpackPlugin from 'html-webpack-plugin'
-import webapck from 'webpack'
+import path from "path";
+import HtmlWebpackPlugin from "html-webpack-plugin";
+import webapck from "webpack";
 
-const resolve = dir => path.resolve(__dirname, dir)
+const resolve = dir => path.resolve(__dirname, dir);
 
 const config = {
-  entry: resolve('src/index.js'),
+  entry: resolve("src/main.js"),
   output: {
-    path: resolve('dist'),
-    filename: 'bundle.js'
+    path: resolve("dist"),
+    filename: "bundle.js"
   },
   resolve: {
     alias: {
-      vue: 'vue/dist/vue.runtime.common.js',
-      '@': resolve('src')
+      vue: "vue/dist/vue.runtime.common.js",
+      "@": resolve("src")
     },
-    extensions: ['.js', '.vue']
+    extensions: [".js", ".vue"]
   },
-  devtool: 'cheap-eval-source-map',
+  devtool: "cheap-eval-source-map",
+  devServer: {
+    historyApiFallback: true
+  },
   module: {
     rules: [
-      { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' },
-      { test: /\.vue$/, loader: 'vue-loader' }
+      { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" },
+      { test: /\.vue$/, loader: "vue-loader" }
     ]
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: resolve('public/index.html')
+      template: resolve("public/index.html")
     }),
     new webapck.HotModuleReplacementPlugin()
   ]
-}
+};
 
-export default config
+export default config;
